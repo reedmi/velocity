@@ -1,0 +1,6 @@
+<html>
+<body>
+#set($name = "World")
+Hello $name
+</body>
+</html>
