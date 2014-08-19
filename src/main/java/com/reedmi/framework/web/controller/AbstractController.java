@@ -7,9 +7,9 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class AbstractController extends HandlerInterceptorAdapter {
 
-	private static final ThreadLocal<HttpServletRequest> REQUEST = new ThreadLocal<>();
+	private static final ThreadLocal<HttpServletRequest> REQUEST = new ThreadLocal<HttpServletRequest>();
 
-	private static final ThreadLocal<HttpServletResponse> RESPONSE = new ThreadLocal<>();
+	private static final ThreadLocal<HttpServletResponse> RESPONSE = new ThreadLocal<HttpServletResponse>();
 
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
