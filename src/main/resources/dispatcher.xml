@@ -40,4 +40,8 @@
             </map>
         </property>
 	</bean>
+	
+	<mvc:interceptors>
+        <bean class=" com.reedmi.framework.web.controller.AbstractController"/>
+    </mvc:interceptors>
 </beans>
