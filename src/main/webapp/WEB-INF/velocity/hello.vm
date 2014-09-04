@@ -1,6 +1,6 @@
 <html>
 <body>
 #set($name = "World")
-Hello $name
+Hello $name, I'm testing something...
 </body>
 </html>
