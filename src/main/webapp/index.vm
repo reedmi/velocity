@@ -4,14 +4,27 @@
 </head>
 <body>
 
-<form method="post" enctype="multipart/form-data" action="hello">
+<form method="post" enctype="multipart/form-data" action="http://localhost:40200/notify/002037000">
 
-name:
-<input type="text" name="name">
-<br />
-age
-<input type="text" name="age">
+        params.put("uid", "6097573");<br>
+        params.put("orderID", "014090408181622524");<br>
+        params.put("productName", "??°?o????é￡??o?-é????3è￠?");<br>
+        params.put("productPrice", "5");<br>
+        params.put("productDesc", "2014090420182376500");<br>
+        params.put("orderTime", "1409833119");<br>
+        params.put("tradeSign", "d1f098d3vXwLuuBwlRAloHUgQKAFxTAwJUBlcH");<br>
+        params.put("tradeState", "success");<br>
 
+
+
+<input type="text" name="uid" value="6097573"><br/>
+<input type="text" name="orderID" value="014090408181622524"><br/>
+<input type="text" name="productName" value="钻石带"><br/>
+<input type="text" name="productPrice" value="5"><br/>
+<input type="text" name="productDesc" value="2014090420182376500"><br/>
+<input type="text" name="orderTime" value="1409833119"><br/>
+<input type="text" name="tradeSign" value="d1f098d3vXwLuuBwlRAloHUgQKAFxTAwJUBlcH"><br/>
+<input type="text" name="tradeState" value="success"><br/>
 <INPUT type="submit" value="Send">
 </form>
 </body>
