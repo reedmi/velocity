@@ -3,28 +3,32 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:context="http://www.springframework.org/schema/context"
     xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:task="http://www.springframework.org/schema/task"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.2.xsd
         http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+        http://www.springframework.org/schema/task 
+        http://www.springframework.org/schema/task/spring-task.xsd">
 
-	<mvc:annotation-driven />
-	<mvc:default-servlet-handler/>
-	<mvc:resources mapping="/resources/**" location="/resources/" />
-	<context:component-scan base-package="com.reedmi.framework.web.controller" />
-	
-	<!-- Configration of velocity -->
-	<bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
-		<property name="configLocation" value="classpath:velocity.properties" />
-		<property name="resourceLoaderPath" value="/WEB-INF/velocity/"/>
-	</bean>
+    <mvc:annotation-driven />
+    <task:annotation-driven/>
+    <mvc:default-servlet-handler/>
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <context:component-scan base-package="com.reedmi.framework.web" />
 
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
-		<property name="cache" value="false"/>
+    <!-- Configration of velocity -->
+    <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        <property name="configLocation" value="classpath:velocity.properties" />
+        <property name="resourceLoaderPath" value="/WEB-INF/velocity/"/>
+    </bean>
+
+    <bean id="viewResolver"
+        class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+        <property name="cache" value="false"/>
         <property name="prefix" value="/"/>
         <property name="suffix" value=".vm"/>
         <!-- 使用springMacro的对象 -->
@@ -39,9 +43,9 @@
                 <entry key="date"><bean class="org.apache.velocity.tools.generic.DateTool"/></entry>
             </map>
         </property>
-	</bean>
-	
-	<mvc:interceptors>
+    </bean>
+
+    <mvc:interceptors>
         <bean class=" com.reedmi.framework.web.controller.AbstractController"/>
     </mvc:interceptors>
 </beans>
